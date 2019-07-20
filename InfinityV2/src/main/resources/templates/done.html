@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista la autenticacion con Twitter</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <p>Lista la autenticacion con Twitter</p>
+    
+    <table th:object="${statuses}" id="tweets" border="1">
+    <tr th:each="status :${statuses}">
+        <td  th:text="${status.getUser().getScreenName()}"></td>
+        <td  th:text="${status.getCreatedAt()}"></td>
+        <td  th:text="${status.getText()}"></td>
+    </tr>
+</table>
+</body>
+</html>
